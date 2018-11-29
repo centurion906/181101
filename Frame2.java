@@ -15,9 +15,12 @@ public class Frame2 extends JFrame{
     private JMenuItem jie = new JMenuItem("Exit");
     private JMenuItem jiOX = new JMenuItem("0Xgame");
     private JMenuItem jibarbar = new JMenuItem("barbar");
+    private JMenuItem jiHappy = new JMenuItem("HappySwimming");
+    private JMenuItem jiKBC = new JMenuItem("KeyboardControl");
     private JMenuItem jiDecrypt = new JMenuItem("Decrypt");
     private JMenuItem jiFileDecrypt = new JMenuItem("File-Decrypt");
     private JMenuItem jiDigitalTimer = new JMenuItem("DigitalTimer");
+    private JMenuItem jiServer = new JMenuItem("URLServer");
     public Frame2(){
         ex2();
     }
@@ -34,10 +37,13 @@ public class Frame2 extends JFrame{
         jmf.add(jic);
         jmf.add(jie);
         jmg.add(jiOX);
+        jmg.add(jiKBC);
         jmg.add(jibarbar);
+        jmg.add(jiHappy);
         jmt.add(jiDecrypt);
         jmt.add(jiFileDecrypt);
         jmt.add(jiDigitalTimer);
+        jmt.add(jiServer);
         jiOX.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -70,11 +76,35 @@ public class Frame2 extends JFrame{
                 Frame2.this.setVisible(false);
             }
         });
+        jiServer.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                URLServer urs = new URLServer(Frame2.this);
+                urs.setVisible(true);
+                Frame2.this.setVisible(false);
+            }
+        });
         jibarbar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 barbar bar = new barbar(Frame2.this);
                 bar.setVisible(true);
+                Frame2.this.setVisible(false);
+            }
+        });
+        jiHappy.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                HappySwimming hsm = new HappySwimming(Frame2.this);
+                hsm.setVisible(true);
+                Frame2.this.setVisible(false);
+            }
+        });
+        jiKBC.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                KeyboardControl kbc = new KeyboardControl(Frame2.this);
+                kbc.setVisible(true);
                 Frame2.this.setVisible(false);
             }
         });
